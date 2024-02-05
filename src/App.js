@@ -12,9 +12,12 @@ function App() {
   const [showNav, setShowNav] = useState(false)
   const [showLogin, setShowLogin] = useState(false)
   const [navigation,setNavigation]=useState("")
-   const screenHeight = window.innerHeight;
-  const screenWidth = window.innerWidth;
   const [email, setEmail] = useState('');
+  const [email1, setEmail1] = useState('');
+  const [password1, setPassword1] = useState(" ");
+  const [username, setUsername] = useState(" ");
+  const [mobile, setMobile] = useState(" ");
+  const [status,setStatus]=useState()
   const [password, setPassword] = useState(" ");
   const [confirmpassword, setConfirmPassword] = useState(" ");
   const [register,setRegister]=useState(false)
@@ -30,12 +33,42 @@ function App() {
     setConfirmPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your login logic here, such as sending data to a server
-    console.log('Email:', email);
-    console.log('Password:', password);
-  };
+  const handleSubmitlogin = ()=> {
+      fetch("http://127.0.0.1:4006/Login",{
+        method:"post",
+        headers:{
+          Accept: 'application/json',
+          "Content-type":"application/json"
+        },
+        body:JSON.stringify({
+          email:email,
+          password:password,
+        })
+
+      }).then(response => response.json())
+      .then(jsonResponse => setStatus(jsonResponse))
+      alert(status)
+  }
+  
+  const handleSubmitsignup = ()=> {
+      fetch("http://127.0.0.1:4006/Signup",{
+        method:"post",
+        headers:{
+          Accept: 'application/json',
+          "Content-type":"application/json"
+        },
+        body:JSON.stringify({
+          email1:email1,
+          password1:password1,
+          mobile1:mobile,
+          username:username,
+        })
+
+      }).then(response => response.json())
+      .then(jsonResponse => setStatus(jsonResponse))
+      alert(status)
+  }
+  
 const toggleMenu = () => {
  document.body.classList.toggle("open")
 }
@@ -118,24 +151,27 @@ function Componentnavigation(){
     <form action="">
       <h1>Register</h1>
       <div class="input-box">
-        <input type="text" placeholder="User Name" required/>
+        <input type="text" placeholder="User Name" onChange={(e)=>setUsername(e.target.value)} required/>
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">
-        <input type="text" placeholder="Email" required/>
-        <i class='bx bxs-user'></i>
-      </div>
-      
-      <div class="input-box">
-        <input type="password" placeholder="Password" required/>
+        <input type="email" placeholder="Email" onChange={(e)=>setEmail1(e.target.value)} required/>
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Confirm Password" required/>
+        <input type="mobile" placeholder="mobile no." onChange={(e)=>setMobile(e.target.value)} required/>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" onChange={(e)=>setPassword1(e.target.value)} required/>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Confirm Password" onChange={(e)=>setConfirmPassword(e.target.value)} required/>
         <i class='bx bxs-lock-alt' ></i>
       </div>
      
-      <button type="submit" class="btn">Register</button>
+      <button type="submit" class="btn" onClick={()=>handleSubmitsignup()}>Register</button>
       
       <div class="register-link">
       
@@ -153,15 +189,15 @@ function Componentnavigation(){
     <form action="">
       <h1>Login</h1>
       <div class="input-box">
-        <input type="text" placeholder="Username" required/>
+        <input type="text" placeholder="Email" onChange={(e)=>setEmail(e.target.value)} required/>
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Password" required/>
+        <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} required/>
         <i class='bx bxs-lock-alt' ></i>
       </div>
      
-      <button type="submit" class="btn">Login</button>
+      <button type="submit" class="btn" onClick={()=>handleSubmitlogin()}>Login</button>
       
       <div class="register-link">
        <div class="remember-forgot">
