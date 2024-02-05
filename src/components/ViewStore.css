@@ -1,0 +1,52 @@
+.storehead{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    justify-content: space-between;
+    margin-bottom: 4%;
+}
+.modelssection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.modelcard{
+background-color: #f9f9f9dd;
+border-radius: 10px;
+margin-bottom: 10px;
+box-shadow: 1px 1px 4px 1px rgba(128, 128, 128, 0.458);
+margin: 4px;
+cursor: pointer;
+}
+.modelimg{
+height: 150px;
+width: 200px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+.modelname{
+font-weight: 500;
+margin: 1px;
+font-size: 14px;
+}
+.partscomponent{
+    background-color: #f9f9f9dd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 4px 1px rgba(128, 128, 128, 0.458);
+    margin-left: 1%;
+    width: 98%;
+    
+   
+}
+.partshead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+   
+}
