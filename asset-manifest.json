@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/vehiclebazar/static/css/main.b3dbe06d.css",
-    "main.js": "/vehiclebazar/static/js/main.26aa94da.js",
+    "main.js": "/vehiclebazar/static/js/main.e7b01bb0.js",
     "static/js/787.c25fd64a.chunk.js": "/vehiclebazar/static/js/787.c25fd64a.chunk.js",
     "static/media/garage.jpg": "/vehiclebazar/static/media/garage.ab719281489a80390e89.jpg",
     "static/media/bg.jpeg": "/vehiclebazar/static/media/bg.8afa2ccfe582407a83ac.jpeg",
     "index.html": "/vehiclebazar/index.html",
     "static/media/menu.svg": "/vehiclebazar/static/media/menu.2f3264454a2f9a0785ec.svg",
     "main.b3dbe06d.css.map": "/vehiclebazar/static/css/main.b3dbe06d.css.map",
-    "main.26aa94da.js.map": "/vehiclebazar/static/js/main.26aa94da.js.map",
+    "main.e7b01bb0.js.map": "/vehiclebazar/static/js/main.e7b01bb0.js.map",
     "787.c25fd64a.chunk.js.map": "/vehiclebazar/static/js/787.c25fd64a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b3dbe06d.css",
-    "static/js/main.26aa94da.js"
+    "static/js/main.e7b01bb0.js"
   ]
 }
